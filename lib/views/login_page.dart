@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/design_system/my_button.dart';
 import 'package:sistemadecadastro/design_system/my_header.dart';
-import 'package:sistemadecadastro/views/cadastrar_empresa.dart';
+import 'package:sistemadecadastro/views/buscar_empresa.dart';
 import 'package:sistemadecadastro/views/splash_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: MyButton(
                       label: 'Entrar',
                       inverted: false,
-                      anchor: CadastrarEmpresa(),
+                      anchor: BuscarEmpresa(),
                     ),
                   ),
                 ],

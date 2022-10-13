@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/design_system/my_color.dart';
 import 'package:sistemadecadastro/design_system/my_header.dart';
+import 'package:sistemadecadastro/views/cadastrar_empresa.dart';
 import 'package:sistemadecadastro/views/login_page.dart';
 
 import '../design_system/my_button.dart';
@@ -127,7 +128,12 @@ class _BuscarEmpresaState extends State<BuscarEmpresa> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: MyColor.primary,
         onPressed: () {
-          log('Salvando');
+          log('Cadastrar');
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const CadastrarEmpresa(),
+            ),
+          );
         },
         tooltip: 'Cadastrar Empresa',
         child: const Icon(

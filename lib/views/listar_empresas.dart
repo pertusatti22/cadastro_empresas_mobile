@@ -1,19 +1,18 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/design_system/my_color.dart';
 import 'package:sistemadecadastro/design_system/my_header.dart';
 
+import '../design_system/my_button.dart';
 import 'buscar_empresa.dart';
 
-class CadastrarEmpresa extends StatefulWidget {
-  const CadastrarEmpresa({Key? key}) : super(key: key);
+class ListarEmpresas extends StatefulWidget {
+  const ListarEmpresas({Key? key}) : super(key: key);
 
   @override
-  State<CadastrarEmpresa> createState() => _CadastrarEmpresaState();
+  State<ListarEmpresas> createState() => _ListarEmpresasState();
 }
 
-class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
+class _ListarEmpresasState extends State<ListarEmpresas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,83 +34,122 @@ class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
               'Empresa',
               style: Theme.of(context).textTheme.headline2,
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'CNPJ',
-                labelStyle: Theme.of(context).textTheme.headline3,
-                border: const UnderlineInputBorder(),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(24, 16, 24, 48),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      initialValue: 'Elisa e Flávia Pães e Doces ME',
+                      style: Theme.of(context).textTheme.headline6,
+                      decoration: InputDecoration(
+                        labelText: 'Razão Social',
+                        labelStyle: Theme.of(context).textTheme.headline3,
+                        border: const UnderlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      initialValue: 'Pães e Doces',
+                      style: Theme.of(context).textTheme.headline6,
+                      decoration: InputDecoration(
+                        labelText: 'Nome Fantasia',
+                        labelStyle: Theme.of(context).textTheme.headline3,
+                        border: const UnderlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      initialValue: '(19) 9 8838-0630',
+                      style: Theme.of(context).textTheme.headline6,
+                      decoration: InputDecoration(
+                        labelText: 'Telefone',
+                        labelStyle: Theme.of(context).textTheme.headline3,
+                        border: const UnderlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      initialValue: 'Mirella Kamilly Letícia Barbosa',
+                      style: Theme.of(context).textTheme.headline6,
+                      decoration: InputDecoration(
+                        labelText: 'Sócio',
+                        labelStyle: Theme.of(context).textTheme.headline3,
+                        border: const UnderlineInputBorder(),
+                      ),
+                    ),
+                    Row(
+                      children: const [
+                        Expanded(
+                          child: MyButton(
+                            label: 'Excluir',
+                            inverted: false,
+                            anchor: BuscarEmpresa(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Razão Social',
-                labelStyle: Theme.of(context).textTheme.headline3,
-                border: const UnderlineInputBorder(),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(24, 16, 24, 48),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      initialValue: 'Elisa e Flávia Pães e Doces ME',
+                      style: Theme.of(context).textTheme.headline6,
+                      decoration: InputDecoration(
+                        labelText: 'Razão Social',
+                        labelStyle: Theme.of(context).textTheme.headline3,
+                        border: const UnderlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      initialValue: 'Pães e Doces',
+                      style: Theme.of(context).textTheme.headline6,
+                      decoration: InputDecoration(
+                        labelText: 'Nome Fantasia',
+                        labelStyle: Theme.of(context).textTheme.headline3,
+                        border: const UnderlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      initialValue: '(19) 9 8838-0630',
+                      style: Theme.of(context).textTheme.headline6,
+                      decoration: InputDecoration(
+                        labelText: 'Telefone',
+                        labelStyle: Theme.of(context).textTheme.headline3,
+                        border: const UnderlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      initialValue: 'Mirella Kamilly Letícia Barbosa',
+                      style: Theme.of(context).textTheme.headline6,
+                      decoration: InputDecoration(
+                        labelText: 'Sócio',
+                        labelStyle: Theme.of(context).textTheme.headline3,
+                        border: const UnderlineInputBorder(),
+                      ),
+                    ),
+                    Row(
+                      children: const [
+                        Expanded(
+                          child: MyButton(
+                            label: 'Excluir',
+                            inverted: false,
+                            anchor: BuscarEmpresa(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Nome Fantasia',
-                labelStyle: Theme.of(context).textTheme.headline3,
-                border: const UnderlineInputBorder(),
-              ),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Telefone',
-                labelStyle: Theme.of(context).textTheme.headline3,
-                border: const UnderlineInputBorder(),
-              ),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Endereço',
-                labelStyle: Theme.of(context).textTheme.headline3,
-                border: const UnderlineInputBorder(),
-              ),
-            ),
-            Text(
-              'Sócio',
-              style: Theme.of(context).textTheme.headline2,
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'CPF/CNPJ',
-                labelStyle: Theme.of(context).textTheme.headline3,
-                border: const UnderlineInputBorder(),
-              ),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Nome',
-                labelStyle: Theme.of(context).textTheme.headline3,
-                border: const UnderlineInputBorder(),
-              ),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Endereço',
-                labelStyle: Theme.of(context).textTheme.headline3,
-                border: const UnderlineInputBorder(),
-              ),
-            ),
+
+            // TODO Alterar cor dos botões
+            // TODO Corrigir questão do espaço
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: MyColor.primary,
-        onPressed: () {
-          log('Salvando');
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const BuscarEmpresa(),
-            ),
-          );
-        },
-        tooltip: 'Cadastrar Empresa',
-        child: const Icon(
-          Icons.add,
-          color: MyColor.gray100,
         ),
       ),
     );

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/design_system/my_color.dart';
 import 'package:sistemadecadastro/design_system/my_header.dart';
 
-import 'buscar_empresa.dart';
+import 'listar_empresas.dart';
 
 class CadastrarEmpresa extends StatefulWidget {
   const CadastrarEmpresa({Key? key}) : super(key: key);
@@ -104,13 +104,13 @@ class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
           log('Salvando');
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const BuscarEmpresa(),
+              builder: (context) => const ListarEmpresas(),
             ),
           );
         },
         tooltip: 'Cadastrar Empresa',
         child: const Icon(
-          Icons.add,
+          Icons.check,
           color: MyColor.gray100,
         ),
       ),
