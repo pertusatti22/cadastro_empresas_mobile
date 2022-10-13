@@ -3,15 +3,18 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/design_system/my_color.dart';
 import 'package:sistemadecadastro/design_system/my_header.dart';
+import 'package:sistemadecadastro/views/login_page.dart';
 
-class CadastrarEmpresa extends StatefulWidget {
-  const CadastrarEmpresa({Key? key}) : super(key: key);
+import '../design_system/my_button.dart';
+
+class BuscarEmpresa extends StatefulWidget {
+  const BuscarEmpresa({Key? key}) : super(key: key);
 
   @override
-  State<CadastrarEmpresa> createState() => _CadastrarEmpresaState();
+  State<BuscarEmpresa> createState() => _BuscarEmpresaState();
 }
 
-class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
+class _BuscarEmpresaState extends State<BuscarEmpresa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,75 +26,103 @@ class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
         ),
         backgroundColor: MyColor.gray100,
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Empresa',
-            style: Theme.of(context).textTheme.headline2,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'CNPJ',
-              labelStyle: Theme.of(context).textTheme.headline3,
-              border: const UnderlineInputBorder(),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(24, 16, 24, 48),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // TODO estilizar botao pesquisa
+            // TODO corrigir erro de estourar página
+            const MyButton(
+              label: 'Buscar',
+              inverted: false,
+              anchor: LoginPage(),
             ),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Razão Social',
-              labelStyle: Theme.of(context).textTheme.headline3,
-              border: const UnderlineInputBorder(),
+            Text(
+              'Empresa',
+              style: Theme.of(context).textTheme.headline2,
             ),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Nome Fantasia',
-              labelStyle: Theme.of(context).textTheme.headline3,
-              border: const UnderlineInputBorder(),
+            TextFormField(
+              initialValue: '11.941.838/0001-04',
+              style: Theme.of(context).textTheme.headline6,
+              decoration: InputDecoration(
+                labelText: 'CNPJ',
+                labelStyle: Theme.of(context).textTheme.headline3,
+                border: const UnderlineInputBorder(),
+              ),
             ),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Telefone',
-              labelStyle: Theme.of(context).textTheme.headline3,
-              border: const UnderlineInputBorder(),
+            TextFormField(
+              initialValue: 'Elisa e Flávia Pães e Doces ME',
+              style: Theme.of(context).textTheme.headline6,
+              decoration: InputDecoration(
+                labelText: 'Razão Social',
+                labelStyle: Theme.of(context).textTheme.headline3,
+                border: const UnderlineInputBorder(),
+              ),
             ),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Endereço',
-              labelStyle: Theme.of(context).textTheme.headline3,
-              border: const UnderlineInputBorder(),
+            TextFormField(
+              initialValue: 'Pães e Doces',
+              style: Theme.of(context).textTheme.headline6,
+              decoration: InputDecoration(
+                labelText: 'Nome Fantasia',
+                labelStyle: Theme.of(context).textTheme.headline3,
+                border: const UnderlineInputBorder(),
+              ),
             ),
-          ),
-          Text(
-            'Sócio',
-            style: Theme.of(context).textTheme.headline2,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'CPF/CNPJ',
-              labelStyle: Theme.of(context).textTheme.headline3,
-              border: const UnderlineInputBorder(),
+            TextFormField(
+              initialValue: '(19) 9 8838-0630',
+              style: Theme.of(context).textTheme.headline6,
+              decoration: InputDecoration(
+                labelText: 'Telefone',
+                labelStyle: Theme.of(context).textTheme.headline3,
+                border: const UnderlineInputBorder(),
+              ),
             ),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Nome',
-              labelStyle: Theme.of(context).textTheme.headline3,
-              border: const UnderlineInputBorder(),
+            TextFormField(
+              initialValue:
+                  'Rua Três, 338, Vila Industrial, Piracicaba/SP, 13.412-233',
+              style: Theme.of(context).textTheme.headline6,
+              decoration: InputDecoration(
+                labelText: 'Endereço',
+                labelStyle: Theme.of(context).textTheme.headline3,
+                border: const UnderlineInputBorder(),
+              ),
             ),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Endereço',
-              labelStyle: Theme.of(context).textTheme.headline3,
-              border: const UnderlineInputBorder(),
+            Text(
+              'Sócio',
+              style: Theme.of(context).textTheme.headline2,
             ),
-          ),
-        ],
+            TextFormField(
+              initialValue: '763.679.800-08',
+              style: Theme.of(context).textTheme.headline6,
+              decoration: InputDecoration(
+                labelText: 'CPF/CNPJ',
+                labelStyle: Theme.of(context).textTheme.headline3,
+                border: const UnderlineInputBorder(),
+              ),
+            ),
+            TextFormField(
+              initialValue: 'Mirella Kamilly Letícia Barbosa',
+              style: Theme.of(context).textTheme.headline6,
+              decoration: InputDecoration(
+                labelText: 'Nome',
+                labelStyle: Theme.of(context).textTheme.headline3,
+                border: const UnderlineInputBorder(),
+              ),
+            ),
+            TextFormField(
+              initialValue:
+                  'Rua Ulisses Bueno, 175, Vila Rosa, Aparecida de Goiânia/GO, 74.935-870',
+              style: Theme.of(context).textTheme.headline6,
+              decoration: InputDecoration(
+                labelText: 'Endereço',
+                labelStyle: Theme.of(context).textTheme.headline3,
+                border: const UnderlineInputBorder(),
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: MyColor.primary,

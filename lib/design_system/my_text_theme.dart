@@ -33,5 +33,11 @@ class MyTextTheme {
       fontSize: 12,
       fontFamily: 'rawline',
     ),
+    headline6: TextStyle(
+      color: MyColor.gray400,
+      fontWeight: FontWeight.w400,
+      fontSize: 18,
+      fontFamily: 'rawline',
+    ),
   );
 }
