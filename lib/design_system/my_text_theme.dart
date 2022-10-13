@@ -3,25 +3,31 @@ import 'package:sistemadecadastro/design_system/my_color.dart';
 
 class MyTextTheme {
   static const TextTheme myTheme = TextTheme(
-    headline2: TextStyle(
+    headline1: TextStyle(
       color: MyColor.primary,
       fontWeight: FontWeight.w900,
       fontSize: 32,
       fontFamily: 'rawline',
     ),
-    headline3: TextStyle(
+    headline2: TextStyle(
       color: MyColor.primary,
       fontWeight: FontWeight.w900,
-      fontSize: 20,
+      fontSize: 18,
       fontFamily: 'rawline',
     ),
-    subtitle1: TextStyle(
+    headline3: TextStyle(
+      color: MyColor.primary,
+      fontWeight: FontWeight.w400,
+      fontSize: 18,
+      fontFamily: 'rawline',
+    ),
+    headline4: TextStyle(
       color: MyColor.primary,
       fontWeight: FontWeight.w400,
       fontSize: 16,
       fontFamily: 'rawline',
     ),
-    subtitle2: TextStyle(
+    headline5: TextStyle(
       color: MyColor.primary,
       fontWeight: FontWeight.w400,
       fontSize: 12,

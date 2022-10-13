@@ -22,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
             ),
             Text(
               'Cadastro de Empresas',
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.headline1,
             ),
           ],
         ),

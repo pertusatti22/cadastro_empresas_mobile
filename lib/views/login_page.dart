@@ -1,9 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/design_system/my_button.dart';
-import 'package:sistemadecadastro/design_system/my_color.dart';
-import 'package:sistemadecadastro/design_system/my_images.dart';
+
+import '../design_system/my_images.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -20,71 +18,69 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Image.asset(
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 128, 24, 48),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
                     logo,
-                    fit: BoxFit.scaleDown,
+                    height: 58,
                   ),
-                ),
-                Expanded(
-                  child: Text(
+                  Text(
                     'Cadastro de Empresas',
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.headline2,
                   ),
-                )
-              ],
+                ],
+              ),
             ),
-            Column(
-              children: [
-                TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Username',
-                    border: UnderlineInputBorder(),
-                  ),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Password',
-                    border: UnderlineInputBorder(),
-                  ),
-                ),
-                const Text(
-                  'Recuperar Senha',
-                  textAlign: TextAlign.right,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: MyButton(
-                        label: 'Entrar',
-                        myColor: MyColor.primary,
-                      ),
-                    )
-                  ],
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      _formKey.currentState?.validate();
-                      log('Entrar');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: MyColor.primary,
-                      textStyle: Theme.of(context).textTheme.subtitle2,
-                      elevation: 10,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(42, 48, 42, 4),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Username',
+                      labelStyle: Theme.of(context).textTheme.headline3,
+                      border: const UnderlineInputBorder(),
                     ),
-                    child: const Text('Cadastrar-se')),
-              ],
-            )
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      labelStyle: Theme.of(context).textTheme.headline3,
+                      border: const UnderlineInputBorder(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(200, 4, 0, 16),
+              child: Text(
+                'Recuperar a senha',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(42, 16, 42, 32),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: MyButton(label: 'Entrar', inverted: false),
+                  ),
+                ],
+              ),
+            ),
+            MyButton(label: 'Cadastrar-se', inverted: true),
           ],
         ),
       ),
     );
   }
 }
+// TODO pensar em outras soluções além dos Paddings
+// TODO melhorar botão Entrar
+// TODO melhorar botão cadastrar-se
+// TODO Add botão google

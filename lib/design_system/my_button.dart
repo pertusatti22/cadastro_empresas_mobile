@@ -5,24 +5,24 @@ import 'my_color.dart';
 class MyButton extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final String label;
-  final MyColor myColor;
+  final bool inverted;
 
-  MyButton({Key? key, required this.label, required this.myColor})
+  MyButton({Key? key, required this.label, required this.inverted})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Color color = myColor as Color;
-
     return ElevatedButton(
         onPressed: () {
           _formKey.currentState?.validate();
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: color,
-          foregroundColor: Colors.white,
-          textStyle: Theme.of(context).textTheme.subtitle1,
-          elevation: 10,
+          backgroundColor: inverted ? Colors.white : MyColor.primary,
+          foregroundColor: inverted ? MyColor.primary : Colors.white,
+          textStyle: inverted
+              ? Theme.of(context).textTheme.headline5
+              : Theme.of(context).textTheme.headline4,
+          elevation: 5,
         ),
         child: Text(label));
   }
