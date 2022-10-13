@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/design_system/my_button.dart';
-
-import '../design_system/my_images.dart';
+import 'package:sistemadecadastro/design_system/my_header.dart';
+import 'package:sistemadecadastro/views/cadastrar_empresa.dart';
+import 'package:sistemadecadastro/views/splash_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -19,21 +20,9 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 128, 24, 48),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset(
-                    logo,
-                    height: 58,
-                  ),
-                  Text(
-                    'Cadastro de Empresas',
-                    style: Theme.of(context).textTheme.headline2,
-                  ),
-                ],
-              ),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(24, 128, 24, 48),
+              child: MyHeader(),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(42, 48, 42, 4),
@@ -66,14 +55,19 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: const EdgeInsets.fromLTRB(42, 16, 42, 32),
               child: Row(
-                children: [
+                children: const [
                   Expanded(
-                    child: MyButton(label: 'Entrar', inverted: false),
+                    child: MyButton(
+                      label: 'Entrar',
+                      inverted: false,
+                      anchor: CadastrarEmpresa(),
+                    ),
                   ),
                 ],
               ),
             ),
-            MyButton(label: 'Cadastrar-se', inverted: true),
+            const MyButton(
+                label: 'Cadastrar-se', inverted: true, anchor: SplashPage()),
           ],
         ),
       ),

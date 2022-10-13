@@ -3,18 +3,26 @@ import 'package:flutter/material.dart';
 import 'my_color.dart';
 
 class MyButton extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
   final String label;
   final bool inverted;
+  final Widget anchor;
 
-  MyButton({Key? key, required this.label, required this.inverted})
+  const MyButton(
+      {Key? key,
+      required this.label,
+      required this.inverted,
+      required this.anchor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: () {
-          _formKey.currentState?.validate();
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => anchor,
+            ),
+          );
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: inverted ? Colors.white : MyColor.primary,

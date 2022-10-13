@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sistemadecadastro/design_system/my_color.dart';
 import 'package:sistemadecadastro/design_system/my_text_theme.dart';
-import 'package:sistemadecadastro/views/login_page.dart';
+import 'package:sistemadecadastro/views/splash_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -10,9 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: MyColor.primary,
         textTheme: MyTextTheme.myTheme,
       ),
-      home: const LoginPage(),
+      home: const SplashPage(),
     );
   }
 }
