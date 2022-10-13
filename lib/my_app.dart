@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/design_system/my_text_theme.dart';
-import 'package:sistemadecadastro/views/splash_page.dart';
+import 'package:sistemadecadastro/views/login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: MyTextTheme.myTheme,
       ),
-      home: const SplashPage(),
+      home: const LoginPage(),
     );
   }
 }
