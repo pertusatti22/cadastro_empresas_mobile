@@ -107,6 +107,26 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 32.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 160,
+                  child: Expanded(
+                    child: OutlinedButton(
+                      onPressed: onPressed,
+                      child: Text(
+                        'Cadastrar-se',
+                        style: Theme.of(context).textTheme.subtitle2,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
