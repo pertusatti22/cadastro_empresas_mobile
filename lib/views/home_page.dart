@@ -21,6 +21,10 @@ class _HomePageState extends State<HomePage> {
     log('onPressedRemove');
   }
 
+  void onPressedAdd() {
+    log('onPressedAdd');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -199,6 +203,15 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: CustomColors.primary,
+        onPressed: onPressedAdd,
+        tooltip: 'Cadastrar Empresa',
+        child: const Icon(
+          Icons.add,
+          color: CustomColors.gray100,
         ),
       ),
     );
