@@ -44,6 +44,12 @@ class _LoginPageState extends State<LoginPage> {
 
   void onPressedGoogle() {
     log('onPressedGoogle');
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+        fullscreenDialog: true,
+      ),
+    );
   }
 
   @override

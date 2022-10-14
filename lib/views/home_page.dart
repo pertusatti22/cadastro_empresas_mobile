@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/theme/custom_colors.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,62 +12,60 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: CustomColors.primary),
-        title: const Padding(
-          padding: EdgeInsets.fromLTRB(2, 8, 2, 8),
-          child: CustomAppBar(),
-        ),
-        backgroundColor: CustomColors.gray100,
-      ),
+      appBar: const CustomAppBar(),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 16, 24, 48),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        padding: const EdgeInsets.all(24.0),
+        child: ListView(
           children: [
+            const SizedBox(
+              height: 24,
+            ),
             Text(
               'Empresa',
               style: Theme.of(context).textTheme.headline2,
             ),
             Card(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(24, 16, 24, 48),
+                padding: const EdgeInsets.all(24.0),
                 child: Column(
                   children: [
                     TextFormField(
-                      initialValue: 'Elisa e Flávia Pães e Doces ME',
-                      style: Theme.of(context).textTheme.headline6,
+                      initialValue: 'Arthur e Andreia Telas Ltda',
+                      readOnly: true,
+                      style: Theme.of(context).textTheme.headline4,
                       decoration: InputDecoration(
                         labelText: 'Razão Social',
-                        labelStyle: Theme.of(context).textTheme.headline3,
+                        labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
                     ),
                     TextFormField(
-                      initialValue: 'Pães e Doces',
-                      style: Theme.of(context).textTheme.headline6,
+                      initialValue: 'Telas',
+                      readOnly: true,
+                      style: Theme.of(context).textTheme.headline4,
                       decoration: InputDecoration(
                         labelText: 'Nome Fantasia',
-                        labelStyle: Theme.of(context).textTheme.headline3,
+                        labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
                     ),
                     TextFormField(
-                      initialValue: '(19) 9 8838-0630',
-                      style: Theme.of(context).textTheme.headline6,
+                      initialValue: '(11) 9 9572-6906',
+                      readOnly: true,
+                      style: Theme.of(context).textTheme.headline4,
                       decoration: InputDecoration(
                         labelText: 'Telefone',
-                        labelStyle: Theme.of(context).textTheme.headline3,
+                        labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
                     ),
                     TextFormField(
-                      initialValue: 'Mirella Kamilly Letícia Barbosa',
-                      style: Theme.of(context).textTheme.headline6,
+                      initialValue: 'Loc. Auto',
+                      readOnly: true,
+                      style: Theme.of(context).textTheme.headline4,
                       decoration: InputDecoration(
                         labelText: 'Sócio',
-                        labelStyle: Theme.of(context).textTheme.headline3,
+                        labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
                     ),
@@ -83,37 +80,41 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     TextFormField(
                       initialValue: 'Elisa e Flávia Pães e Doces ME',
-                      style: Theme.of(context).textTheme.headline6,
+                      readOnly: true,
+                      style: Theme.of(context).textTheme.headline4,
                       decoration: InputDecoration(
                         labelText: 'Razão Social',
-                        labelStyle: Theme.of(context).textTheme.headline3,
+                        labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
                     ),
                     TextFormField(
                       initialValue: 'Pães e Doces',
-                      style: Theme.of(context).textTheme.headline6,
+                      readOnly: true,
+                      style: Theme.of(context).textTheme.headline4,
                       decoration: InputDecoration(
                         labelText: 'Nome Fantasia',
-                        labelStyle: Theme.of(context).textTheme.headline3,
+                        labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
                     ),
                     TextFormField(
                       initialValue: '(19) 9 8838-0630',
-                      style: Theme.of(context).textTheme.headline6,
+                      readOnly: true,
+                      style: Theme.of(context).textTheme.headline4,
                       decoration: InputDecoration(
                         labelText: 'Telefone',
-                        labelStyle: Theme.of(context).textTheme.headline3,
+                        labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
                     ),
                     TextFormField(
                       initialValue: 'Mirella Kamilly Letícia Barbosa',
-                      style: Theme.of(context).textTheme.headline6,
+                      readOnly: true,
+                      style: Theme.of(context).textTheme.headline4,
                       decoration: InputDecoration(
                         labelText: 'Sócio',
-                        labelStyle: Theme.of(context).textTheme.headline3,
+                        labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
                     ),
@@ -121,9 +122,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-
-            // TODO Alterar cor dos botões
-            // TODO Corrigir questão do espaço
           ],
         ),
       ),
