@@ -18,7 +18,7 @@ class _ListarEmpresasState extends State<ListarEmpresas> {
         iconTheme: const IconThemeData(color: CustomColors.primary),
         title: const Padding(
           padding: EdgeInsets.fromLTRB(2, 8, 2, 8),
-          child: CustomAppBar(title: 'teste'),
+          child: CustomAppBar(),
         ),
         backgroundColor: CustomColors.gray100,
       ),

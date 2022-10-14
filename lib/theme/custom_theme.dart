@@ -25,7 +25,7 @@ class CustomTheme {
         ),
         headline3: GoogleFonts.raleway(
           color: CustomColors.primary,
-          fontSize: 20,
+          fontSize: 16,
           fontWeight: FontWeight.w800,
         ),
         headline4: GoogleFonts.raleway(
@@ -35,13 +35,13 @@ class CustomTheme {
         ),
         subtitle1: GoogleFonts.raleway(
           color: CustomColors.primary,
-          fontSize: 18,
-          fontWeight: FontWeight.normal,
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
         ),
         subtitle2: GoogleFonts.raleway(
           color: CustomColors.primary,
-          fontSize: 14,
-          fontWeight: FontWeight.normal,
+          fontSize: 10,
+          fontWeight: FontWeight.w500,
         ),
       ));
 }
