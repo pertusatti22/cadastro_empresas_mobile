@@ -67,3 +67,4 @@ class _CustomAppBarState extends State<CustomAppBar> {
     );
   }
 }
+// TODO Adicionar bool para ativar/desativar IconButton
