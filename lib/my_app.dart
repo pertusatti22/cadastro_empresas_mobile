@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_text_theme.dart';
-import 'package:sistemadecadastro/theme/custom_colors.dart';
+import 'package:sistemadecadastro/theme/custom_theme.dart';
 import 'package:sistemadecadastro/views/splash_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -10,11 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: CustomColors.primary,
-        textTheme: MyTextTheme.myTheme,
-      ),
+      title: 'Cadastro de Empresas',
       home: const SplashPage(),
+      theme: CustomTheme.lightTheme,
     );
   }
 }
