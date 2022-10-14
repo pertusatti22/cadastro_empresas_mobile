@@ -36,12 +36,12 @@ class CustomTheme {
         subtitle1: GoogleFonts.raleway(
           color: CustomColors.primary,
           fontSize: 18,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.normal,
         ),
         subtitle2: GoogleFonts.raleway(
           color: CustomColors.primary,
           fontSize: 14,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.normal,
         ),
       ));
 }

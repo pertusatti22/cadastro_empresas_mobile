@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sistemadecadastro/theme/custom_title.dart';
 
 import '../theme/custom_images.dart';
 import 'login_page.dart';
 
 class SplashPage extends StatefulWidget {
-  final String title;
-
-  const SplashPage({Key? key, required this.title}) : super(key: key);
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -38,7 +37,7 @@ class _SplashPageState extends State<SplashPage> {
               height: 128,
             ),
             Text(
-              widget.title,
+              title,
               style: Theme.of(context).textTheme.headline2,
             ),
           ],

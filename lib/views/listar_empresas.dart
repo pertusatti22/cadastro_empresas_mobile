@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/theme/custom_colors.dart';
-import 'package:sistemadecadastro/theme/custom_primary_button.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
+import 'package:sistemadecadastro/widgets/custom_primary_button.dart';
 
 class ListarEmpresas extends StatefulWidget {
   const ListarEmpresas({Key? key}) : super(key: key);

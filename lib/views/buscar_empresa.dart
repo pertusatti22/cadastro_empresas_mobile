@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/theme/custom_colors.dart';
-import 'package:sistemadecadastro/theme/custom_primary_button.dart';
+import 'package:sistemadecadastro/widgets/custom_primary_button.dart';
 
 import '../widgets/custom_app_bar.dart';
 import 'cadastrar_empresa.dart';

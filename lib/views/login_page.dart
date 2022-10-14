@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sistemadecadastro/theme/custom_title.dart';
 
-import '../theme/custom_primary_button.dart';
-import '../widgets/custom_app_bar.dart';
+import '../theme/custom_images.dart';
+import '../widgets/custom_primary_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,33 +18,40 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: Column(
           children: [
-            const CustomAppBar(title: 'Cadastro de Empresas'),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(42, 48, 42, 4),
-              child: Column(
-                children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Username',
-                      labelStyle: Theme.of(context).textTheme.headline3,
-                      border: const UnderlineInputBorder(),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      logo,
+                      height: 48,
                     ),
+                    const Text(title),
+                  ],
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Username',
+                    labelStyle: Theme.of(context).textTheme.subtitle1,
+                    border: const UnderlineInputBorder(),
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      labelStyle: Theme.of(context).textTheme.headline3,
-                      border: const UnderlineInputBorder(),
-                    ),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    labelStyle: Theme.of(context).textTheme.subtitle1,
+                    border: const UnderlineInputBorder(),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(200, 4, 0, 16),
               child: Text(
                 'Recuperar a senha',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.subtitle2,
               ),
             ),
             Padding(
