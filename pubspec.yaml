@@ -79,19 +79,19 @@ flutter:
     - family: 'rawline'
       fonts:
         - asset: assets/fonts/rawline-400.ttf
-        - weight: 400
+          weight: 400
         - asset: assets/fonts/rawline-400i.ttf
-        - weight: 400
-        - style: italic
+          weight: 400
+          style: italic
         - asset: assets/fonts/rawline-700.ttf
-        - weight: 700
+          weight: 700
         - asset: assets/fonts/rawline-700i.ttf
-        - weight: 700
-        - style: italic
+          weight: 700
+          style: italic
         - asset: assets/fonts/rawline-800.ttf
-        - weight: 800
+          weight: 800
         - asset: assets/fonts/rawline-800i.ttf
-        - weight: 800
-        - style: italic
+          weight: 800
+          style: italic
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
