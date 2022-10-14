@@ -5,7 +5,6 @@ import 'package:sistemadecadastro/theme/custom_title.dart';
 import 'package:sistemadecadastro/views/splash_page.dart';
 
 import '../theme/custom_images.dart';
-import '../widgets/custom_primary_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -95,8 +94,19 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 32.0,
             ),
-            const CustomPrimaryButton(label: 'Entrar'),
-            const CustomPrimaryButton(label: 'Cadastrar-se'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: onPressed,
+                    child: const Text(
+                      'Entrar',
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

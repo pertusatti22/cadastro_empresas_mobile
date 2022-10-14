@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/theme/custom_colors.dart';
-import 'package:sistemadecadastro/widgets/custom_primary_button.dart';
 
 import '../widgets/custom_app_bar.dart';
 import 'cadastrar_empresa.dart';
@@ -34,7 +33,6 @@ class _BuscarEmpresaState extends State<BuscarEmpresa> {
           children: [
             // TODO estilizar botao pesquisa
             // TODO corrigir erro de estourar página
-            const CustomPrimaryButton(label: 'Search'),
             Text(
               'Empresa',
               style: Theme.of(context).textTheme.headline2,
