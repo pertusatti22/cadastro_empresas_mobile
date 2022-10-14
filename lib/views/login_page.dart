@@ -6,6 +6,7 @@ import 'package:sistemadecadastro/theme/custom_title.dart';
 import 'package:sistemadecadastro/views/splash_page.dart';
 
 import '../theme/custom_images.dart';
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -15,8 +16,26 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String email = '';
+  String password = '';
+
   void onPressedLogin() {
-    log('onPressedLogin');
+    if (email == 'pertusatti22@gmail.com' && password == '123') {
+      log('onPressedLogin');
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => const HomePage(),
+          fullscreenDialog: true,
+        ),
+      );
+    } else {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => const SplashPage(),
+          fullscreenDialog: true,
+        ),
+      );
+    }
   }
 
   void onPressedRegister() {
@@ -30,14 +49,15 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+        body: SingleChildScrollView(
+      child: Padding(
         padding: const EdgeInsets.all(48.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 128,
+              height: 96,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -57,9 +77,12 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(
-              height: 64.0,
+              height: 48.0,
             ),
             TextFormField(
+              onChanged: (text) {
+                email = text;
+              },
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
@@ -69,9 +92,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(
-              height: 12.0,
+              height: 8.0,
             ),
             TextFormField(
+              onChanged: (text) {
+                password = text;
+              },
+              obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Digite sua Senha',
                 labelStyle: Theme.of(context).textTheme.subtitle1,
@@ -79,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(
-              height: 8.0,
+              height: 4.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -101,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(
-              height: 32.0,
+              height: 24.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(
-              height: 32.0,
+              height: 12.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -147,6 +174,6 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
-    );
+    ));
   }
 }
