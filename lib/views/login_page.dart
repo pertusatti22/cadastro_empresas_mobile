@@ -3,10 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:sistemadecadastro/theme/custom_title.dart';
-import 'package:sistemadecadastro/views/splash_page.dart';
 
 import '../theme/custom_images.dart';
-import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -21,20 +19,10 @@ class _LoginPageState extends State<LoginPage> {
 
   void onPressedLogin() {
     if (email == 'pertusatti22@gmail.com' && password == '123') {
-      log('onPressedLogin');
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const HomePage(),
-          fullscreenDialog: true,
-        ),
-      );
+      Navigator.of(context).pushNamed('/home');
+      log('Login Successful!');
     } else {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const SplashPage(),
-          fullscreenDialog: true,
-        ),
-      );
+      Navigator.of(context).pushNamed('/');
     }
   }
 
@@ -43,13 +31,12 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void onPressedGoogle() {
-    log('onPressedGoogle');
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => const HomePage(),
-        fullscreenDialog: true,
-      ),
-    );
+    Navigator.of(context).pushNamed('/home');
+    log('Google Login Successful!');
+  }
+
+  void onPressedRecoverPassword() {
+    Navigator.of(context).pushNamed('/');
   }
 
   @override
@@ -118,18 +105,11 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 InkWell(
+                  onTap: onPressedRecoverPassword,
                   child: Text(
                     'Recuperar a senha',
                     style: Theme.of(context).textTheme.subtitle2,
                   ),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const SplashPage(),
-                        fullscreenDialog: true,
-                      ),
-                    );
-                  },
                 ),
               ],
             ),

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
@@ -11,10 +9,6 @@ class DetalharEmpresaPage extends StatefulWidget {
 }
 
 class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
-  void onPressedCreate() {
-    log('onPressedAdd');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

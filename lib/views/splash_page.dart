@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/theme/custom_title.dart';
 
 import '../theme/custom_images.dart';
-import 'login_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -16,12 +15,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const LoginPage(),
-          fullscreenDialog: true,
-        ),
-      );
+      Navigator.of(context).pushNamed('/login');
     });
   }
 
