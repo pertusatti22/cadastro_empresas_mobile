@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:sistemadecadastro/views/cadastrar_empresa_page.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
 import '../theme/custom_colors.dart';
@@ -23,6 +24,12 @@ class _HomePageState extends State<HomePage> {
 
   void onPressedAdd() {
     log('onPressedAdd');
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const CadastrarEmpresaPage(),
+        fullscreenDialog: true,
+      ),
+    );
   }
 
   @override
