@@ -20,7 +20,7 @@ class CustomTheme {
       textTheme: TextTheme(
         headline2: GoogleFonts.raleway(
           color: CustomColors.primary,
-          fontSize: 32,
+          fontSize: 24,
           fontWeight: FontWeight.w800,
         ),
         headline3: GoogleFonts.raleway(

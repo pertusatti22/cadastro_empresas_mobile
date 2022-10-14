@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../design_system/my_button.dart';
-import '../views/buscar_empresa.dart';
-import '../views/splash_page.dart';
+import '../theme/custom_primary_button.dart';
 import '../widgets/custom_app_bar.dart';
 
 class LoginPage extends StatefulWidget {
@@ -53,17 +51,12 @@ class _LoginPageState extends State<LoginPage> {
               child: Row(
                 children: const [
                   Expanded(
-                    child: MyButton(
-                      label: 'Entrar',
-                      inverted: false,
-                      anchor: BuscarEmpresa(),
-                    ),
+                    child: CustomPrimaryButton(label: 'Entrar'),
                   ),
                 ],
               ),
             ),
-            const MyButton(
-                label: 'Cadastrar-se', inverted: true, anchor: SplashPage()),
+            const CustomPrimaryButton(label: 'Cadastrar-se'),
           ],
         ),
       ),

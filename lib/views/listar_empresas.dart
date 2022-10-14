@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_header.dart';
 import 'package:sistemadecadastro/theme/custom_colors.dart';
-
-import '../design_system/my_button.dart';
-import 'buscar_empresa.dart';
+import 'package:sistemadecadastro/theme/custom_primary_button.dart';
+import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
 class ListarEmpresas extends StatefulWidget {
   const ListarEmpresas({Key? key}) : super(key: key);
@@ -20,7 +18,7 @@ class _ListarEmpresasState extends State<ListarEmpresas> {
         iconTheme: const IconThemeData(color: CustomColors.primary),
         title: const Padding(
           padding: EdgeInsets.fromLTRB(2, 8, 2, 8),
-          child: MyHeader(),
+          child: CustomAppBar(title: 'teste'),
         ),
         backgroundColor: CustomColors.gray100,
       ),
@@ -78,11 +76,7 @@ class _ListarEmpresasState extends State<ListarEmpresas> {
                     Row(
                       children: const [
                         Expanded(
-                          child: MyButton(
-                            label: 'Excluir',
-                            inverted: false,
-                            anchor: BuscarEmpresa(),
-                          ),
+                          child: CustomPrimaryButton(label: 'excluir'),
                         ),
                       ],
                     ),
@@ -134,11 +128,7 @@ class _ListarEmpresasState extends State<ListarEmpresas> {
                     Row(
                       children: const [
                         Expanded(
-                          child: MyButton(
-                            label: 'Excluir',
-                            inverted: false,
-                            anchor: BuscarEmpresa(),
-                          ),
+                          child: CustomPrimaryButton(label: 'excluir'),
                         ),
                       ],
                     ),

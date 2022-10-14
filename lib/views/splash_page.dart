@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/theme/custom_images.dart';
 
+import '../theme/custom_images.dart';
 import 'login_page.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  final String title;
+
+  const SplashPage({Key? key, required this.title}) : super(key: key);
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -33,11 +35,11 @@ class _SplashPageState extends State<SplashPage> {
           children: [
             Image.asset(
               logo,
-              fit: BoxFit.fill,
+              height: 128,
             ),
             Text(
-              'Cadastro de Empresas',
-              style: Theme.of(context).textTheme.headline1,
+              widget.title,
+              style: Theme.of(context).textTheme.headline2,
             ),
           ],
         ),

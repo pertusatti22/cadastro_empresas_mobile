@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_header.dart';
 import 'package:sistemadecadastro/theme/custom_colors.dart';
+import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
 import 'listar_empresas.dart';
 
@@ -21,7 +21,7 @@ class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
         iconTheme: const IconThemeData(color: CustomColors.primary),
         title: const Padding(
           padding: EdgeInsets.fromLTRB(2, 8, 2, 8),
-          child: MyHeader(),
+          child: CustomAppBar(title: 'teste'),
         ),
         backgroundColor: CustomColors.gray100,
       ),

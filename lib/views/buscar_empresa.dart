@@ -1,12 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_header.dart';
 import 'package:sistemadecadastro/theme/custom_colors.dart';
-import 'package:sistemadecadastro/views/cadastrar_empresa.dart';
-import 'package:sistemadecadastro/views/login_page.dart';
+import 'package:sistemadecadastro/theme/custom_primary_button.dart';
 
-import '../design_system/my_button.dart';
+import '../widgets/custom_app_bar.dart';
+import 'cadastrar_empresa.dart';
 
 class BuscarEmpresa extends StatefulWidget {
   const BuscarEmpresa({Key? key}) : super(key: key);
@@ -23,7 +22,7 @@ class _BuscarEmpresaState extends State<BuscarEmpresa> {
         iconTheme: const IconThemeData(color: CustomColors.primary),
         title: const Padding(
           padding: EdgeInsets.fromLTRB(2, 8, 2, 8),
-          child: MyHeader(),
+          child: CustomAppBar(title: 'teste'),
         ),
         backgroundColor: CustomColors.gray100,
       ),
@@ -35,11 +34,7 @@ class _BuscarEmpresaState extends State<BuscarEmpresa> {
           children: [
             // TODO estilizar botao pesquisa
             // TODO corrigir erro de estourar página
-            const MyButton(
-              label: 'Buscar',
-              inverted: false,
-              anchor: LoginPage(),
-            ),
+            const CustomPrimaryButton(label: 'Search'),
             Text(
               'Empresa',
               style: Theme.of(context).textTheme.headline2,
