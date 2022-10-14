@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-class MyColor {
-  MyColor._();
+class CustomColors {
+  CustomColors._();
 
   static const Color primary = Color.fromARGB(255, 0, 55, 114);
   static const Color warning = Color.fromARGB(255, 114, 21, 0);

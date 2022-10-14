@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_color.dart';
 import 'package:sistemadecadastro/design_system/my_text_theme.dart';
+import 'package:sistemadecadastro/theme/custom_colorsme.dart';
 import 'package:sistemadecadastro/views/splash_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: MyColor.primary,
+        primaryColor: CustomColors.primary,
         textTheme: MyTextTheme.myTheme,
       ),
       home: const SplashPage(),

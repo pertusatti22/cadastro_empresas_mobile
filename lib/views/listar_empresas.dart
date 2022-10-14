@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_color.dart';
 import 'package:sistemadecadastro/design_system/my_header.dart';
+import 'package:sistemadecadastro/theme/custom_colors.dart';
 
 import '../design_system/my_button.dart';
 import 'buscar_empresa.dart';
@@ -17,12 +17,12 @@ class _ListarEmpresasState extends State<ListarEmpresas> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: MyColor.primary),
+        iconTheme: const IconThemeData(color: CustomColors.primary),
         title: const Padding(
           padding: EdgeInsets.fromLTRB(2, 8, 2, 8),
           child: MyHeader(),
         ),
-        backgroundColor: MyColor.gray100,
+        backgroundColor: CustomColors.gray100,
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(24, 16, 24, 48),

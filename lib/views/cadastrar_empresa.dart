@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_color.dart';
 import 'package:sistemadecadastro/design_system/my_header.dart';
+import 'package:sistemadecadastro/theme/custom_colors.dart';
 
 import 'listar_empresas.dart';
 
@@ -18,12 +18,12 @@ class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: MyColor.primary),
+        iconTheme: const IconThemeData(color: CustomColors.primary),
         title: const Padding(
           padding: EdgeInsets.fromLTRB(2, 8, 2, 8),
           child: MyHeader(),
         ),
-        backgroundColor: MyColor.gray100,
+        backgroundColor: CustomColors.gray100,
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(24, 16, 24, 48),
@@ -99,7 +99,7 @@ class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: MyColor.primary,
+        backgroundColor: CustomColors.primary,
         onPressed: () {
           log('Salvando');
           Navigator.of(context).push(
@@ -111,7 +111,7 @@ class _CadastrarEmpresaState extends State<CadastrarEmpresa> {
         tooltip: 'Cadastrar Empresa',
         child: const Icon(
           Icons.check,
-          color: MyColor.gray100,
+          color: CustomColors.gray100,
         ),
       ),
     );
