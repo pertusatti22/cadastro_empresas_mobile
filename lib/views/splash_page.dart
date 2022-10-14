@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_images.dart';
+import 'package:sistemadecadastro/theme/custom_images.dart';
 
 import 'login_page.dart';
 

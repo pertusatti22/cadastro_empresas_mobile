@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/design_system/my_button.dart';
-import 'package:sistemadecadastro/design_system/my_header.dart';
-import 'package:sistemadecadastro/views/buscar_empresa.dart';
-import 'package:sistemadecadastro/views/splash_page.dart';
+
+import '../design_system/my_button.dart';
+import '../views/buscar_empresa.dart';
+import '../views/splash_page.dart';
+import '../widgets/custom_app_bar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,18 +13,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.fromLTRB(24, 128, 24, 48),
-              child: MyHeader(),
-            ),
+            const CustomAppBar(title: 'Cadastro de Empresas'),
             Padding(
               padding: const EdgeInsets.fromLTRB(42, 48, 42, 4),
               child: Column(
