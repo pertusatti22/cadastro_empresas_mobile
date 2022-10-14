@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
+import '../theme/custom_colors.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -14,19 +16,23 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: const CustomAppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             const SizedBox(
-              height: 24,
+              height: 12,
             ),
             Text(
               'Empresa',
               style: Theme.of(context).textTheme.headline2,
             ),
+            const SizedBox(
+              height: 12,
+            ),
             Card(
+              color: CustomColors.gray50,
               child: Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     TextFormField(
@@ -73,9 +79,13 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 16,
+            ),
             Card(
+              color: CustomColors.gray50,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(24, 16, 24, 48),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     TextFormField(
