@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
@@ -11,6 +13,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void onPressedDetail() {
+    log('onPressedDetail');
+  }
+
+  void onPressedRemove() {
+    log('onPressedRemove');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,6 +85,34 @@ class _HomePageState extends State<HomePage> {
                         border: const UnderlineInputBorder(),
                       ),
                     ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          child: OutlinedButton(
+                            onPressed: onPressedRemove,
+                            child: Text(
+                              'Excluir',
+                              style: Theme.of(context).textTheme.subtitle2,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 24,
+                        ),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: onPressedDetail,
+                            child: const Text(
+                              'Detalhar',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -127,6 +165,34 @@ class _HomePageState extends State<HomePage> {
                         labelStyle: Theme.of(context).textTheme.subtitle2,
                         border: const UnderlineInputBorder(),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          child: OutlinedButton(
+                            onPressed: onPressedRemove,
+                            child: Text(
+                              'Excluir',
+                              style: Theme.of(context).textTheme.subtitle2,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 24,
+                        ),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: onPressedDetail,
+                            child: const Text(
+                              'Detalhar',
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
