@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:sistemadecadastro/theme/custom_title.dart';
 import 'package:sistemadecadastro/views/splash_page.dart';
 
@@ -14,8 +15,16 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  void onPressed() {
-    log('clicou');
+  void onPressedLogin() {
+    log('onPressedLogin');
+  }
+
+  void onPressedRegister() {
+    log('onPressedRegister');
+  }
+
+  void onPressedGoogle() {
+    log('onPressedGoogle');
   }
 
   @override
@@ -99,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: onPressed,
+                    onPressed: onPressedLogin,
                     child: const Text(
                       'Entrar',
                     ),
@@ -117,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: 160,
                   child: Expanded(
                     child: OutlinedButton(
-                      onPressed: onPressed,
+                      onPressed: onPressedRegister,
                       child: Text(
                         'Cadastrar-se',
                         style: Theme.of(context).textTheme.subtitle2,
@@ -127,6 +136,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 32.0,
+            ),
+            SignInButton(
+              Buttons.Google,
+              text: "Sign up with Google",
+              onPressed: onPressedGoogle,
+            )
           ],
         ),
       ),
