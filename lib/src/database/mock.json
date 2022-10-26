@@ -1,69 +1,65 @@
-
-
-{
-  "empresas": {
-    "empresa": {
-      "id": "ca3e6c78-dae6-4629-b819-e5576c00f68b",
-      "createdAd": "2022-08-31 22:37:17.921952",
-      "cnpj": "11.941.838/0001-04",
-      "razaoSocial": "Elisa e Flávia Pães e Doces ME",
-      "nomeFantasia": "Pães e Doces",
-      "telefone": "(19) 9 8838-0630",
-      "endereco": {
-        "logradouro": "Rua Três",
-        "numero": "338",
-        "complemento": "",
-        "bairro": "Vila Industrial",
-        "cidade": "Piracicaba",
-        "estado": "SP",
-        "cep": "13.412-233"
-      },
-      "socio": {
-        "tipo": "fisica",
-        "nome": "Mirella Kamilly Letícia Barbosa",
-        "cpf": "763.679.800-08",
-        "endereco": {
-          "logradouro": "Rua Ulisses Bueno",
-          "numero": "175",
-          "complemento": "",
-          "bairro": "Vila Rosa",
-          "cidade": "Aparecida de Goiânia",
-          "estado": "GO",
-          "cep": "74.935-870"
-        }
-      }
+[
+  {
+    "id": "ca3e6c78-dae6-4629-b819-e5576c00f68b",
+    "createdAd": "2022-08-31 22:37:17.921952",
+    "cnpj": "11.941.838/0001-04",
+    "razaoSocial": "Elisa e Flávia Pães e Doces ME",
+    "nomeFantasia": "Pães e Doces",
+    "telefone": "(19) 9 8838-0630",
+    "endereco": {
+      "logradouro": "Rua Três",
+      "numero": "338",
+      "complemento": "",
+      "bairro": "Vila Industrial",
+      "cidade": "Piracicaba",
+      "estado": "SP",
+      "cep": "13.412-233"
     },
-    "empresa": {
-      "id": "fb7afcf0-2669-4e2b-8bd7-72d7456762b0",
-      "createdAd": "2022-08-31 22:37:17.922076",
-      "cnpj": "92.456.516/0001-63",
-      "razaoSocial": "Arthur e Andreia Telas Ltda",
-      "nomeFantasia": "Telas",
-      "telefone": "(11) 9 9572-6906",
+    "socio": {
+      "tipoSocio": "fisica",
+      "nome": "Mirella Kamilly Letícia Barbosa",
+      "cpf": "763.679.800-08",
       "endereco": {
-        "logradouro": "Rua Domingos Vendemiati",
-        "numero": "154",
+        "logradouro": "Rua Ulisses Bueno",
+        "numero": "175",
         "complemento": "",
-        "bairro": "Parque Recanto do Parrilho",
-        "cidade": "Jundiaí",
+        "bairro": "Vila Rosa",
+        "cidade": "Aparecida de Goiânia",
+        "estado": "GO",
+        "cep": "74.935-870"
+      }
+    }
+  },
+  {
+    "id": "fb7afcf0-2669-4e2b-8bd7-72d7456762b0",
+    "createdAd": "2022-08-31 22:37:17.922076",
+    "cnpj": "92.456.516/0001-63",
+    "razaoSocial": "Arthur e Andreia Telas Ltda",
+    "nomeFantasia": "Telas",
+    "telefone": "(11) 9 9572-6906",
+    "endereco": {
+      "logradouro": "Rua Domingos Vendemiati",
+      "numero": "154",
+      "complemento": "",
+      "bairro": "Parque Recanto do Parrilho",
+      "cidade": "Jundiaí",
+      "estado": "SP",
+      "cep": "13.219-051"
+    },
+    "socio": {
+      "tipo": "juridica",
+      "razaoSocial": "Lavínia e Tereza Locações de Automóveis Ltda",
+      "nomeFantasia": "Loc., Auto",
+      "cpf": "87.009.263/0001-40",
+      "endereco": {
+        "logradouro": "Rua Ângelo Alberto Nesti",
+        "numero": "639",
+        "complemento": "",
+        "bairro": "Bussocaba",
+        "cidade": "Osasco/SP",
         "estado": "SP",
-        "cep": "13.219-051"
-      },
-      "socio": {
-        "tipo": "juridica",
-        "razaoSocial": "Lavínia e Tereza Locações de Automóveis Ltda",
-        "nomeFantasia": "Loc., Auto",
-        "cpf": "87.009.263/0001-40",
-        "endereco": {
-          "logradouro": "Rua Ângelo Alberto Nesti",
-          "numero": "639",
-          "complemento": "",
-          "bairro": "Bussocaba",
-          "cidade": "Osasco/SP",
-          "estado": "SP",
-          "cep": "06.053-060"
-        }
+        "cep": "06.053-060"
       }
     }
   }
-}
+]
