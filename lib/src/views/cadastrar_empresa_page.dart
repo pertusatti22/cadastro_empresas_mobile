@@ -1,9 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:sistemadecadastro/theme/custom_colors.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
-
-import '../theme/custom_colors.dart';
 
 class CadastrarEmpresaPage extends StatefulWidget {
   const CadastrarEmpresaPage({Key? key}) : super(key: key);

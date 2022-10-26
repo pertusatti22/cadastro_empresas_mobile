@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sistemadecadastro/theme/custom_images.dart';
 import 'package:sistemadecadastro/theme/custom_title.dart';
-
-import '../theme/custom_images.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

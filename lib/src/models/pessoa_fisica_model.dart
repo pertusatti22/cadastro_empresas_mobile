@@ -1,4 +1,4 @@
-import 'package:sistemadecadastro/models/pessoa_model.dart';
+import 'package:sistemadecadastro/src/models/pessoa_model.dart';
 
 class PessoaFisicaModel extends PessoaModel {
   String? nome;
