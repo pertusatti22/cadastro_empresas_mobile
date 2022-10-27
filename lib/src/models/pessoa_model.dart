@@ -1,10 +1,10 @@
 import 'endereco_model.dart';
 
 abstract class PessoaModel {
+  late TipoSocio tipoSocio;
   late EnderecoModel endereco;
-  late TipoPessoa tipoPessoa;
 
-  PessoaModel({required this.endereco, required this.tipoPessoa});
+  PessoaModel(this.endereco, this.tipoSocio);
 }
 
-enum TipoPessoa { fisica, juridica }
+enum TipoSocio { fisica, juridica }

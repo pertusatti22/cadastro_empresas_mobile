@@ -5,10 +5,11 @@ class PessoaJuridicaModel extends PessoaModel {
   String? nomeFantasia;
   String? cnpj;
 
-  PessoaJuridicaModel(
-      {required this.razaoSocial,
-      required this.nomeFantasia,
-      required this.cnpj,
-      required super.endereco,
-      super.tipoPessoa = TipoPessoa.juridica});
+  PessoaJuridicaModel({
+    required super.endereco,
+    required super.tipoSocio,
+    required this.razaoSocial,
+    required this.nomeFantasia,
+    required this.cnpj,
+  });
 }

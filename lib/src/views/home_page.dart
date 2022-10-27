@@ -5,8 +5,6 @@ import 'package:sistemadecadastro/src/controller/home_page_controller.dart';
 import 'package:sistemadecadastro/theme/custom_colors.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
-import '../database/Database.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -15,6 +13,136 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final homePageController = HomePageController();
+
+  _start() {
+    return Container();
+  }
+
+  _loading() {
+    return const Center(child: CircularProgressIndicator());
+  }
+
+  _success() {
+    return ListView.builder(
+        itemCount: homePageController.empresas.length,
+        itemBuilder: (context, index) {
+          var empresa = homePageController.empresas[index];
+          return Card(
+            color: CustomColors.gray50,
+            elevation: 5,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  TextFormField(
+                    initialValue: empresa.razaoSocial,
+                    readOnly: true,
+                    style: Theme.of(context).textTheme.headline4,
+                    decoration: InputDecoration(
+                      labelText: 'Razão Social',
+                      labelStyle: Theme.of(context).textTheme.subtitle2,
+                      border: const UnderlineInputBorder(),
+                    ),
+                  ),
+                  TextFormField(
+                    initialValue: empresa.nomeFantasia,
+                    readOnly: true,
+                    style: Theme.of(context).textTheme.headline4,
+                    decoration: InputDecoration(
+                      labelText: 'Nome Fantasia',
+                      labelStyle: Theme.of(context).textTheme.subtitle2,
+                      border: const UnderlineInputBorder(),
+                    ),
+                  ),
+                  TextFormField(
+                    initialValue: empresa.telefone,
+                    readOnly: true,
+                    style: Theme.of(context).textTheme.headline4,
+                    decoration: InputDecoration(
+                      labelText: 'Telefone',
+                      labelStyle: Theme.of(context).textTheme.subtitle2,
+                      border: const UnderlineInputBorder(),
+                    ),
+                  ),
+                  TextFormField(
+                    initialValue: empresa.socioModel?.nome,
+                    readOnly: true,
+                    style: Theme.of(context).textTheme.headline4,
+                    decoration: InputDecoration(
+                      labelText: 'Sócio',
+                      labelStyle: Theme.of(context).textTheme.subtitle2,
+                      border: const UnderlineInputBorder(),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Expanded(
+                        child: OutlinedButton(
+                          onPressed: onPressedRemove,
+                          child: Text(
+                            'Excluir',
+                            style: Theme.of(context).textTheme.subtitle2,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 24,
+                      ),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: onPressedDetail,
+                          child: const Text(
+                            'Detalhar',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
+
+  _error() {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          homePageController.start();
+        },
+        child: const Text('Tentar novamente'),
+      ),
+    );
+  }
+
+  stateManagement(HomeState state) {
+    switch (state) {
+      case HomeState.start:
+        return _start();
+      case HomeState.loading:
+        return _loading();
+      case HomeState.error:
+        return _error();
+      case HomeState.success:
+        return _success();
+      default:
+        return _start();
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    homePageController.start();
+  }
+
   void onPressedDetail() {
     log('onPressedDetail');
     Navigator.of(context).pushNamed('/home/read');
@@ -33,320 +161,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: [
-            const SizedBox(
-              height: 12,
-            ),
-            Text(
-              'Empresa',
-              style: Theme.of(context).textTheme.headline2,
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            FutureBuilder(
-              future: HomePageController().readMock(),
-              builder: (context, data) {
-                if (data.hasError) {
-                  return Center(child: Text("${data.error}"));
-                } else if (data.hasData) {
-                  var items = data.data as List<Database>;
-                  return ListView.builder(
-                      itemCount: items == null ? 0 : items.length,
-                      itemBuilder: (context, index) {
-                        return Card(
-                            color: CustomColors.gray50,
-                            elevation: 5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Column(
-                                children: [
-                                  TextFormField(
-                                    initialValue:
-                                        items[index].razaoSocial.toString(),
-                                    readOnly: true,
-                                    style:
-                                        Theme.of(context).textTheme.headline4,
-                                    decoration: InputDecoration(
-                                      labelText: 'Razão Social',
-                                      labelStyle:
-                                          Theme.of(context).textTheme.subtitle2,
-                                      border: const UnderlineInputBorder(),
-                                    ),
-                                  ),
-                                  TextFormField(
-                                    initialValue:
-                                        items[index].nomeFantasia.toString(),
-                                    readOnly: true,
-                                    style:
-                                        Theme.of(context).textTheme.headline4,
-                                    decoration: InputDecoration(
-                                      labelText: 'Nome Fantasia',
-                                      labelStyle:
-                                          Theme.of(context).textTheme.subtitle2,
-                                      border: const UnderlineInputBorder(),
-                                    ),
-                                  ),
-                                  TextFormField(
-                                    initialValue:
-                                        items[index].telefone.toString(),
-                                    readOnly: true,
-                                    style:
-                                        Theme.of(context).textTheme.headline4,
-                                    decoration: InputDecoration(
-                                      labelText: 'Telefone',
-                                      labelStyle:
-                                          Theme.of(context).textTheme.subtitle2,
-                                      border: const UnderlineInputBorder(),
-                                    ),
-                                  ),
-                                  TextFormField(
-                                    initialValue: items[index].socio.toString(),
-                                    readOnly: true,
-                                    style:
-                                        Theme.of(context).textTheme.headline4,
-                                    decoration: InputDecoration(
-                                      labelText: 'Sócio',
-                                      labelStyle:
-                                          Theme.of(context).textTheme.subtitle2,
-                                      border: const UnderlineInputBorder(),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 24,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Expanded(
-                                        child: OutlinedButton(
-                                          onPressed: onPressedRemove,
-                                          child: Text(
-                                            'Excluir',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .subtitle2,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 24,
-                                      ),
-                                      Expanded(
-                                        child: ElevatedButton(
-                                          onPressed: onPressedDetail,
-                                          child: const Text(
-                                            'Detalhar',
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ));
-                      });
-                } else {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-              },
-            )
-
-            /*Card(
-              color: CustomColors.gray50,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    TextFormField(
-                      initialValue: 'Arthur e Andreia Telas Ltda',
-                      readOnly: true,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline4,
-                      decoration: InputDecoration(
-                        labelText: 'Razão Social',
-                        labelStyle: Theme
-                            .of(context)
-                            .textTheme
-                            .subtitle2,
-                        border: const UnderlineInputBorder(),
-                      ),
-                    ),
-                    TextFormField(
-                      initialValue: 'Telas',
-                      readOnly: true,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline4,
-                      decoration: InputDecoration(
-                        labelText: 'Nome Fantasia',
-                        labelStyle: Theme
-                            .of(context)
-                            .textTheme
-                            .subtitle2,
-                        border: const UnderlineInputBorder(),
-                      ),
-                    ),
-                    TextFormField(
-                      initialValue: '(11) 9 9572-6906',
-                      readOnly: true,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline4,
-                      decoration: InputDecoration(
-                        labelText: 'Telefone',
-                        labelStyle: Theme
-                            .of(context)
-                            .textTheme
-                            .subtitle2,
-                        border: const UnderlineInputBorder(),
-                      ),
-                    ),
-                    TextFormField(
-                      initialValue: 'Loc. Auto',
-                      readOnly: true,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline4,
-                      decoration: InputDecoration(
-                        labelText: 'Sócio',
-                        labelStyle: Theme
-                            .of(context)
-                            .textTheme
-                            .subtitle2,
-                        border: const UnderlineInputBorder(),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Expanded(
-                          child: OutlinedButton(
-                            onPressed: onPressedRemove,
-                            child: Text(
-                              'Excluir',
-                              style: Theme
-                                  .of(context)
-                                  .textTheme
-                                  .subtitle2,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 24,
-                        ),
-                        Expanded(
-                          child: ElevatedButton(
-                            onPressed: onPressedDetail,
-                            child: const Text(
-                              'Detalhar',
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(
-              height: 16,
-            ),
-            Card(
-              color: CustomColors.gray50,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    TextFormField(
-                      initialValue: 'Elisa e Flávia Pães e Doces ME',
-                      readOnly: true,
-                      style: Theme.of(context).textTheme.headline4,
-                      decoration: InputDecoration(
-                        labelText: 'Razão Social',
-                        labelStyle: Theme.of(context).textTheme.subtitle2,
-                        border: const UnderlineInputBorder(),
-                      ),
-                    ),
-                    TextFormField(
-                      initialValue: 'Pães e Doces',
-                      readOnly: true,
-                      style: Theme.of(context).textTheme.headline4,
-                      decoration: InputDecoration(
-                        labelText: 'Nome Fantasia',
-                        labelStyle: Theme.of(context).textTheme.subtitle2,
-                        border: const UnderlineInputBorder(),
-                      ),
-                    ),
-                    TextFormField(
-                      initialValue: '(19) 9 8838-0630',
-                      readOnly: true,
-                      style: Theme.of(context).textTheme.headline4,
-                      decoration: InputDecoration(
-                        labelText: 'Telefone',
-                        labelStyle: Theme.of(context).textTheme.subtitle2,
-                        border: const UnderlineInputBorder(),
-                      ),
-                    ),
-                    TextFormField(
-                      initialValue: 'Mirella Kamilly Letícia Barbosa',
-                      readOnly: true,
-                      style: Theme.of(context).textTheme.headline4,
-                      decoration: InputDecoration(
-                        labelText: 'Sócio',
-                        labelStyle: Theme.of(context).textTheme.subtitle2,
-                        border: const UnderlineInputBorder(),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Expanded(
-                          child: OutlinedButton(
-                            onPressed: onPressedRemove,
-                            child: Text(
-                              'Excluir',
-                              style: Theme.of(context).textTheme.subtitle2,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 24,
-                        ),
-                        Expanded(
-                          child: ElevatedButton(
-                            onPressed: onPressedDetail,
-                            child: const Text(
-                              'Detalhar',
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),*/
-          ],
-        ),
+      body: AnimatedBuilder(
+        animation: homePageController.state,
+        builder: (context, child) {
+          return stateManagement(homePageController.state.value);
+        },
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: CustomColors.primary,

@@ -61,5 +61,36 @@
         "cep": "06.053-060"
       }
     }
+  },
+  {
+    "id": "jp7afcf0-2669-4e2b-8bd7-72d7456762b0",
+    "createdAd": "2022-10-26 22:13:30.123446",
+    "cnpj": "63.458.851/0001-15",
+    "razaoSocial": "JP Gestão Ltda",
+    "nomeFantasia": "JP Gestão",
+    "telefone": "(61) 9 9222-4334",
+    "endereco": {
+      "logradouro": "SQN 507, Bl C",
+      "numero": "500",
+      "complemento": "",
+      "bairro": "Asa Norte",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "cep": "71.020-050"
+    },
+    "socio": {
+      "tipoSocio": "fisica",
+      "nome": "Jackson Pertusatti",
+      "cpf": "000.000.000-00",
+      "endereco": {
+        "logradouro": "CA 10",
+        "numero": "103",
+        "complemento": "",
+        "bairro": "Centro de Atividades",
+        "cidade": "Brasília",
+        "estado": "DF",
+        "cep": "71.440.650"
+      }
+    }
   }
 ]
