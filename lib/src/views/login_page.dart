@@ -136,13 +136,11 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 SizedBox(
                   width: 160,
-                  child: Expanded(
-                    child: OutlinedButton(
-                      onPressed: onPressedRegister,
-                      child: Text(
-                        'Cadastrar-se',
-                        style: Theme.of(context).textTheme.subtitle2,
-                      ),
+                  child: OutlinedButton(
+                    onPressed: onPressedRegister,
+                    child: Text(
+                      'Cadastrar-se',
+                      style: Theme.of(context).textTheme.subtitle2,
                     ),
                   ),
                 ),
