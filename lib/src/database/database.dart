@@ -25,7 +25,7 @@ class Database {
       this.enderecoModel,
       this.socioModel});
 
-  Future<List<Database>> readMock() async {
+  Future<List<Database>> listMock() async {
     final mockdata = await rootBundle.loadString('assets/database/mock.json');
     final list = json.decode(mockdata) as List<dynamic>;
     return list.map((e) => Database.fromJson(e)).toList();

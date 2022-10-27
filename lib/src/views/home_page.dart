@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/src/controller/home_page_controller.dart';
+import 'package:sistemadecadastro/src/controller/home_controller.dart';
 import 'package:sistemadecadastro/theme/custom_colors.dart';
 import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
 
@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final homePageController = HomePageController();
+  final homePageController = HomeController();
 
   _start() {
     return Container();
@@ -95,7 +95,11 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Expanded(
                         child: ElevatedButton(
-                          onPressed: onPressedDetail,
+                          onPressed: () {
+                            log('teste');
+                            Navigator.of(context).pushNamed('/home/read',
+                                arguments: homePageController.empresas[index]);
+                          },
                           child: const Text(
                             'Detalhar',
                           ),
@@ -141,11 +145,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     homePageController.start();
-  }
-
-  void onPressedDetail() {
-    log('onPressedDetail');
-    Navigator.of(context).pushNamed('/home/read');
   }
 
   void onPressedRemove() {
