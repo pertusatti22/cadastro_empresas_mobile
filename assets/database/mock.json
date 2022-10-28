@@ -1,7 +1,5 @@
 [
   {
-    "id": "ca3e6c78-dae6-4629-b819-e5576c00f68b",
-    "createdAd": "2022-08-31 22:37:17.921952",
     "cnpj": "11.941.838/0001-04",
     "razaoSocial": "Elisa e Flávia Pães e Doces ME",
     "nomeFantasia": "Pães e Doces",
@@ -31,8 +29,6 @@
     }
   },
   {
-    "id": "fb7afcf0-2669-4e2b-8bd7-72d7456762b0",
-    "createdAd": "2022-08-31 22:37:17.922076",
     "cnpj": "92.456.516/0001-63",
     "razaoSocial": "Arthur e Andreia Telas Ltda",
     "nomeFantasia": "Telas",
@@ -50,7 +46,7 @@
       "tipo": "juridica",
       "razaoSocial": "Lavínia e Tereza Locações de Automóveis Ltda",
       "nomeFantasia": "Loc., Auto",
-      "cpf": "87.009.263/0001-40",
+      "cnpj": "87.009.263/0001-40",
       "endereco": {
         "logradouro": "Rua Ângelo Alberto Nesti",
         "numero": "639",
@@ -63,8 +59,6 @@
     }
   },
   {
-    "id": "jp7afcf0-2669-4e2b-8bd7-72d7456762b0",
-    "createdAd": "2022-10-26 22:13:30.123446",
     "cnpj": "63.458.851/0001-15",
     "razaoSocial": "JP Gestão Ltda",
     "nomeFantasia": "JP Gestão",

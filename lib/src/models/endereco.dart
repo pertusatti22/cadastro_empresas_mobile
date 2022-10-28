@@ -1,4 +1,4 @@
-class EnderecoModel {
+class Endereco {
   String? logradouro;
   String? numero;
   String? complemento;
@@ -7,7 +7,7 @@ class EnderecoModel {
   String? estado;
   String? cep;
 
-  EnderecoModel(
+  Endereco(
       {this.logradouro,
       this.numero,
       this.complemento,
@@ -16,7 +16,7 @@ class EnderecoModel {
       this.estado,
       this.cep});
 
-  EnderecoModel.fromJson(Map<String, dynamic> json) {
+  Endereco.fromJson(Map<String, dynamic> json) {
     logradouro = json['logradouro'];
     numero = json['numero'];
     complemento = json['complemento'];

@@ -1,17 +1,17 @@
-import 'package:flutter/cupertino.dart';
-import 'package:sistemadecadastro/src/database/database.dart';
+import 'package:flutter/material.dart';
+import 'package:sistemadecadastro/src/models/empresa.dart';
 
 class HomeController {
-  List<Database> empresas = [];
-  late final Database _database;
+  List<Empresa> empresas = [];
+  late final Empresa _empresa;
   final state = ValueNotifier<HomeState>(HomeState.start);
 
-  HomeController([Database? database]) : _database = database ?? Database();
+  HomeController([Empresa? empresa]) : _empresa = empresa ?? Empresa();
 
   Future start() async {
     state.value = HomeState.loading;
     try {
-      empresas = await _database.listMock();
+      empresas = await _empresa.listar();
       state.value = HomeState.success;
     } catch (e) {
       state.value = HomeState.error;
