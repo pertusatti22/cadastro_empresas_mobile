@@ -21,7 +21,7 @@ digitar o comando:
 ### 🔧 Instalação
 
 Para obter uma cópia do projeto basta realizar um Fork ou utilizar o comando:
-> git clone "https://github.com/pertusatti22/sistemadecadastro.git"
+> git clone "https://github.com/pertusatti22/cadastro_empresas_mobile"
 
 ## ⚙️ Testes
 
