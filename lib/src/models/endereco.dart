@@ -1,4 +1,5 @@
 class Endereco {
+  int? id;
   String? logradouro;
   String? numero;
   String? complemento;
@@ -8,7 +9,8 @@ class Endereco {
   String? cep;
 
   Endereco(
-      {this.logradouro,
+      {this.id,
+      this.logradouro,
       this.numero,
       this.complemento,
       this.bairro,
@@ -17,6 +19,7 @@ class Endereco {
       this.cep});
 
   Endereco.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
     logradouro = json['logradouro'];
     numero = json['numero'];
     complemento = json['complemento'];
@@ -28,6 +31,7 @@ class Endereco {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
     data['logradouro'] = logradouro;
     data['numero'] = numero;
     data['complemento'] = complemento;

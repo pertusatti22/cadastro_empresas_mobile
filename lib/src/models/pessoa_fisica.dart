@@ -1,22 +1,38 @@
-import 'package:sistemadecadastro/src/models/endereco.dart';
 import 'package:sistemadecadastro/src/models/pessoa.dart';
 
+import 'endereco.dart';
+
 class PessoaFisica extends Pessoa {
-  String? nome;
+  String? nomeCompleto;
   String? cpf;
 
-  PessoaFisica.fromJson(Map<String, dynamic> json) {
-    super.socio = Socio.fisica;
-    nome = json['nome'];
-    cpf = json['cpf'];
-    endereco = Endereco.fromJson(json['endereco']);
+  PessoaFisica({
+    required int id,
+    required Type type,
+    required Endereco? endereco,
+    required this.nomeCompleto,
+    required this.cpf,
+  }) : super(id, type, endereco);
+
+  factory PessoaFisica.fromJson(Map<String, dynamic> json) {
+    return PessoaFisica(
+        id: json['id'],
+        type: json['type'],
+        endereco: json['endereco'],
+        nomeCompleto: json['nomeCompleto'],
+        cpf: json['cpf']);
   }
 
+  @override
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['nome'] = nome;
+    data['id'] = id;
+    data['type'] = type;
+    if (endereco != null) {
+      data['endereco'] = endereco!.toJson();
+    }
+    data['nomeCompleto'] = nomeCompleto;
     data['cpf'] = cpf;
-    data['endereco'] = endereco.toJson();
     return data;
   }
 }

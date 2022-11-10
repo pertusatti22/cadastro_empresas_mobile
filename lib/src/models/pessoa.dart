@@ -1,10 +1,13 @@
 import 'endereco.dart';
 
 abstract class Pessoa {
-  Socio socio;
-  Endereco endereco;
+  late int? id;
+  late Type type;
+  late Endereco? endereco;
 
-  Pessoa({required this.socio, required this.endereco});
+  Pessoa(this.id, this.type, this.endereco);
+
+  toJson() {}
 }
 
-enum Socio { fisica, juridica }
+enum Type { fisica, juridica }
