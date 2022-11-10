@@ -1,7 +1,7 @@
 import 'package:easy_search_bar/easy_search_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/theme/custom_colors.dart';
 
+import '../theme/custom_colors.dart';
 import '../theme/custom_images.dart';
 import '../theme/custom_title.dart';
 

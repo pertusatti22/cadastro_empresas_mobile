@@ -1,8 +1,8 @@
+import 'package:cadastro_empresas_mobile/src/views/detalhar_empresa_page.dart';
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/src/views/detalhar_empresa_page.dart';
-import 'package:sistemadecadastro/theme/custom_theme.dart';
-import 'package:sistemadecadastro/theme/custom_title.dart';
 
+import '../theme/custom_theme.dart';
+import '../theme/custom_title.dart';
 import 'views/cadastrar_empresa_page.dart';
 import 'views/home_page.dart';
 import 'views/login_page.dart';

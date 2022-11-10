@@ -1,5 +1,6 @@
-import 'package:sistemadecadastro/src/models/pessoa.dart';
-import 'package:sistemadecadastro/src/models/pessoa_juridica.dart';
+import 'package:cadastro_empresas_mobile/src/models/pessoa.dart';
+import 'package:cadastro_empresas_mobile/src/models/pessoa_fisica.dart';
+import 'package:cadastro_empresas_mobile/src/models/pessoa_juridica.dart';
 
 class Sociedade {
   int? id;
@@ -12,8 +13,8 @@ class Sociedade {
   factory Sociedade.fromJson(Map<String, dynamic> json) {
     return Sociedade(
         id: json['id'],
-        pessoa: json['pessoa'],
-        pessoaJuridica: json['pessoaJuridica']);
+        pessoa: Pessoa.fromJson(json) as PessoaFisica,
+        pessoaJuridica: PessoaJuridica.fromJson(json));
   }
 
   Map<String, dynamic> toJson() {

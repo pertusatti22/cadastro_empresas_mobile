@@ -1,4 +1,4 @@
-import 'package:sistemadecadastro/src/models/pessoa.dart';
+import 'package:cadastro_empresas_mobile/src/models/pessoa.dart';
 
 import 'endereco.dart';
 
@@ -14,13 +14,9 @@ class PessoaFisica extends Pessoa {
     required this.cpf,
   }) : super(id, type, endereco);
 
-  factory PessoaFisica.fromJson(Map<String, dynamic> json) {
-    return PessoaFisica(
-        id: json['id'],
-        type: json['type'],
-        endereco: json['endereco'],
-        nomeCompleto: json['nomeCompleto'],
-        cpf: json['cpf']);
+  Pessoa.fromJson(Map<String, dynamic> json) {
+        nomeCompleto= json['nomeCompleto'];
+         cpf= json['cpf'];
   }
 
   @override

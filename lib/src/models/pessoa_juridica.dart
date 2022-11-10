@@ -1,4 +1,4 @@
-import 'package:sistemadecadastro/src/models/pessoa.dart';
+import 'package:cadastro_empresas_mobile/src/models/pessoa.dart';
 
 import 'endereco.dart';
 

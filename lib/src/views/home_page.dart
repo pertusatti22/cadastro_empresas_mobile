@@ -1,9 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/src/controller/home_controller.dart';
-import 'package:sistemadecadastro/theme/custom_colors.dart';
-import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
+
+import '../../theme/custom_colors.dart';
+import '../../widgets/custom_app_bar.dart';
+import '../controllers/sociedade_controller.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final homePageController = HomeController();
+  final controller = SociedadeController();
 
   _start() {
     return Container();
@@ -25,9 +26,9 @@ class _HomePageState extends State<HomePage> {
 
   _success() {
     return ListView.builder(
-        itemCount: homePageController.empresas.length,
+        itemCount: controller.empresas.length,
         itemBuilder: (context, index) {
-          var empresa = homePageController.empresas[index];
+          var empresa = controller.empresas[index];
           return Card(
             color: CustomColors.gray50,
             elevation: 5,
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   TextFormField(
-                    initialValue: empresa.razaoSocial,
+                    initialValue: empresa.pessoaJuridica?.razaoSocial,
                     readOnly: true,
                     style: Theme.of(context).textTheme.headline4,
                     decoration: InputDecoration(
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   TextFormField(
-                    initialValue: empresa.nomeFantasia,
+                    initialValue: empresa.pessoaJuridica?.nomeFantasia,
                     readOnly: true,
                     style: Theme.of(context).textTheme.headline4,
                     decoration: InputDecoration(
@@ -56,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   TextFormField(
-                    initialValue: empresa.telefone,
+                    initialValue: empresa.pessoaJuridica?.telefone,
                     readOnly: true,
                     style: Theme.of(context).textTheme.headline4,
                     decoration: InputDecoration(
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   TextFormField(
-                    initialValue: empresa.socioModel?.nome,
+                    initialValue: 'Perguntar Jéssica',
                     readOnly: true,
                     style: Theme.of(context).textTheme.headline4,
                     decoration: InputDecoration(
@@ -98,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             log('teste');
                             Navigator.of(context).pushNamed('/home/read',
-                                arguments: homePageController.empresas[index]);
+                                arguments: controller.empresas[index]);
                           },
                           child: const Text(
                             'Detalhar',
@@ -118,7 +119,7 @@ class _HomePageState extends State<HomePage> {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          homePageController.start();
+          controller.start();
         },
         child: const Text('Tentar novamente'),
       ),
@@ -143,8 +144,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-
-    homePageController.start();
+    controller.start();
   }
 
   void onPressedRemove() {
@@ -161,9 +161,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: const CustomAppBar(),
       body: AnimatedBuilder(
-        animation: homePageController.state,
+        animation: controller.state,
         builder: (context, child) {
-          return stateManagement(homePageController.state.value);
+          return stateManagement(controller.state.value);
         },
       ),
       floatingActionButton: FloatingActionButton(

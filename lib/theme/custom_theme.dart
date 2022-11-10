@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sistemadecadastro/theme/custom_colors.dart';
+
+import 'custom_colors.dart';
 
 class CustomTheme {
   static ThemeData lightTheme = ThemeData(

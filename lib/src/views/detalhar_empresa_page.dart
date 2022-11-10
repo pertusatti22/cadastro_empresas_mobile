@@ -1,8 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/src/controller/detalhar_empresa_controller.dart';
-import 'package:sistemadecadastro/widgets/custom_app_bar.dart';
+
+import '../../widgets/custom_app_bar.dart';
+import '../controllers/sociedade_controller.dart';
 
 class DetalharEmpresaPage extends StatefulWidget {
   static const routeName = '/home/read';
@@ -14,7 +15,7 @@ class DetalharEmpresaPage extends StatefulWidget {
 }
 
 class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
-  final detalharEmpresaController = DetalharEmpresaController();
+  final controller = SociedadeController();
 
   _start() {
     return Container();
@@ -26,9 +27,9 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
 
   _success() {
     return ListView.builder(
-        itemCount: detalharEmpresaController.empresas.length,
+        itemCount: controller.empresas.length,
         itemBuilder: (context, id) {
-          var empresa = detalharEmpresaController.empresas[id];
+          var empresa = controller.empresas[id];
           return Card(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -54,7 +55,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                   Column(
                     children: [
                       TextFormField(
-                        initialValue: empresa.cnpj,
+                        initialValue: empresa.pessoaJuridica?.cnpj,
                         readOnly: true,
                         style: Theme.of(context).textTheme.headline4,
                         decoration: InputDecoration(
@@ -64,7 +65,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                         ),
                       ),
                       TextFormField(
-                        initialValue: empresa.razaoSocial,
+                        initialValue: empresa.pessoaJuridica?.razaoSocial,
                         readOnly: true,
                         style: Theme.of(context).textTheme.headline4,
                         decoration: InputDecoration(
@@ -74,7 +75,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                         ),
                       ),
                       TextFormField(
-                        initialValue: empresa.nomeFantasia,
+                        initialValue: empresa.pessoaJuridica?.nomeFantasia,
                         readOnly: true,
                         style: Theme.of(context).textTheme.headline4,
                         decoration: InputDecoration(
@@ -84,7 +85,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                         ),
                       ),
                       TextFormField(
-                        initialValue: empresa.telefone,
+                        initialValue: empresa.pessoaJuridica?.telefone,
                         readOnly: true,
                         style: Theme.of(context).textTheme.headline4,
                         decoration: InputDecoration(
@@ -94,7 +95,8 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                         ),
                       ),
                       TextFormField(
-                        initialValue: empresa.enderecoModel.toString(),
+                        initialValue:
+                            empresa.pessoaJuridica?.endereco.toString(),
                         readOnly: true,
                         keyboardType: TextInputType.multiline,
                         minLines: 2,
@@ -124,7 +126,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                   Column(
                     children: [
                       TextFormField(
-                        initialValue: empresa.socioModel?.cpf,
+                        initialValue: empresa.pessoa?.id.toString(),
                         readOnly: true,
                         style: Theme.of(context).textTheme.headline4,
                         decoration: InputDecoration(
@@ -134,7 +136,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                         ),
                       ),
                       TextFormField(
-                        initialValue: empresa.socioModel?.nome,
+                        initialValue: empresa.pessoa?.type.toString(),
                         readOnly: true,
                         style: Theme.of(context).textTheme.headline4,
                         decoration: InputDecoration(
@@ -144,8 +146,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                         ),
                       ),
                       TextFormField(
-                        initialValue:
-                            empresa.socioModel?.enderecoModel.toString(),
+                        initialValue: empresa.pessoa?.endereco.toString(),
                         readOnly: true,
                         keyboardType: TextInputType.multiline,
                         minLines: 2,
@@ -176,22 +177,22 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          detalharEmpresaController.start();
+          controller.start();
         },
         child: const Text('Tentar novamente'),
       ),
     );
   }
 
-  stateManagement(DetalharEmpresaState state) {
+  stateManagement(HomeState state) {
     switch (state) {
-      case DetalharEmpresaState.start:
+      case HomeState.start:
         return _start();
-      case DetalharEmpresaState.loading:
+      case HomeState.loading:
         return _loading();
-      case DetalharEmpresaState.error:
+      case HomeState.error:
         return _error();
-      case DetalharEmpresaState.success:
+      case HomeState.success:
         return _success();
       default:
         return _start();
@@ -202,7 +203,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
   void initState() {
     super.initState();
 
-    detalharEmpresaController.start();
+    controller.start();
   }
 
   @override
@@ -212,9 +213,9 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
     return Scaffold(
       appBar: const CustomAppBar(),
       body: AnimatedBuilder(
-        animation: detalharEmpresaController.state,
+        animation: controller.state,
         builder: (context, child) {
-          return stateManagement(detalharEmpresaController.state.value);
+          return stateManagement(controller.state.value);
         },
       ),
     );

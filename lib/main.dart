@@ -1,5 +1,5 @@
+import 'package:cadastro_empresas_mobile/src/my_app.dart';
 import 'package:flutter/material.dart';
-import 'package:sistemadecadastro/src/my_app.dart';
 
 void main() {
   runApp(const MyApp());

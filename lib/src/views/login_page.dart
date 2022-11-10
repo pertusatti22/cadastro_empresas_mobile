@@ -2,8 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:sistemadecadastro/theme/custom_images.dart';
-import 'package:sistemadecadastro/theme/custom_title.dart';
+
+import '../../theme/custom_images.dart';
+import '../../theme/custom_title.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

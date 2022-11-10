@@ -1,5 +1,5 @@
-name: sistemadecadastro
-description: A new Flutter project.
+name: cadastro_empresas_mobile
+description: Evolução do desafio proposto para o curso de Desenvolvedor Mobile da Próz.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -40,6 +40,7 @@ dependencies:
   flutter_signin_button: ^2.0.0
   easy_search_bar: ^2.3.1
   uuid: ^3.0.6
+  dio: ^4.0.6
 
 dev_dependencies:
   flutter_test:

@@ -7,6 +7,12 @@ abstract class Pessoa {
 
   Pessoa(this.id, this.type, this.endereco);
 
+  Pessoa.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    type = json['type'];
+    endereco = json['endereco'];
+  }
+
   toJson() {}
 }
 
