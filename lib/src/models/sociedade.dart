@@ -1,19 +1,16 @@
-import 'package:cadastro_empresas_mobile/src/models/pessoa.dart';
-import 'package:cadastro_empresas_mobile/src/models/pessoa_fisica.dart';
 import 'package:cadastro_empresas_mobile/src/models/pessoa_juridica.dart';
 
 class Sociedade {
   int? id;
   PessoaJuridica? pessoaJuridica;
-  Pessoa? pessoa;
+  //Pessoa? pessoa;
 
-  Sociedade(
-      {required this.id, required this.pessoaJuridica, required this.pessoa});
+  Sociedade({required this.id, required this.pessoaJuridica});
 
   factory Sociedade.fromJson(Map<String, dynamic> json) {
     return Sociedade(
         id: json['id'],
-        pessoa: Pessoa.fromJson(json) as PessoaFisica,
+        //pessoa: Pessoa.fromJson(json) as PessoaFisica,
         pessoaJuridica: PessoaJuridica.fromJson(json));
   }
 
@@ -23,9 +20,9 @@ class Sociedade {
     if (pessoaJuridica != null) {
       data['pessoaJuridica'] = pessoaJuridica!.toJson();
     }
-    if (pessoa != null) {
-      data['pessoa'] = pessoa!.toJson();
-    }
+    // if (pessoa != null) {
+    //   data['pessoa'] = pessoa!.toJson();
+    // }
     return data;
   }
 }

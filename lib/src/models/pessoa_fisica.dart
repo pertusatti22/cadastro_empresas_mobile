@@ -14,10 +14,10 @@ class PessoaFisica extends Pessoa {
     required this.cpf,
   }) : super(id, type, endereco);
 
-  Pessoa.fromJson(Map<String, dynamic> json) {
-        nomeCompleto= json['nomeCompleto'];
-         cpf= json['cpf'];
-  }
+  // Pessoa.fromJson(Map<String, dynamic> json) {
+  //       nomeCompleto= json['nomeCompleto'];
+  //        cpf= json['cpf'];
+  // }
 
   @override
   Map<String, dynamic> toJson() {

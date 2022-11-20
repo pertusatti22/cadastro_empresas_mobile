@@ -126,7 +126,7 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                   Column(
                     children: [
                       TextFormField(
-                        initialValue: empresa.pessoa?.id.toString(),
+                        initialValue: 'teste', //empresa.pessoa?.id.toString(),
                         readOnly: true,
                         style: Theme.of(context).textTheme.headline4,
                         decoration: InputDecoration(
@@ -136,7 +136,8 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                         ),
                       ),
                       TextFormField(
-                        initialValue: empresa.pessoa?.type.toString(),
+                        initialValue:
+                            'teste', //empresa.pessoa?.type.toString(),
                         readOnly: true,
                         style: Theme.of(context).textTheme.headline4,
                         decoration: InputDecoration(
@@ -146,7 +147,8 @@ class _DetalharEmpresaPageState extends State<DetalharEmpresaPage> {
                         ),
                       ),
                       TextFormField(
-                        initialValue: empresa.pessoa?.endereco.toString(),
+                        initialValue:
+                            'teste', //empresa.pessoa?.endereco.toString(),
                         readOnly: true,
                         keyboardType: TextInputType.multiline,
                         minLines: 2,

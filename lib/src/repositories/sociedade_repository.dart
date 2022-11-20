@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 
 import '../models/sociedade.dart';
@@ -11,6 +13,7 @@ class SociedadeRepository {
   Future<List<Sociedade>> fetchEmpresas() async {
     final response = await dio.get('$url/sociedades');
     final list = response.data as List;
+    log(list.toString());
     return list.map((json) => Sociedade.fromJson(json)).toList();
   }
 }
