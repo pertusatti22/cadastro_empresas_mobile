@@ -1,22 +1,26 @@
 class Endereco {
   int? id;
   String? logradouro;
-  String? numero;
+  int? numero;
   String? complemento;
   String? bairro;
   String? cidade;
   String? estado;
   String? cep;
 
-  Endereco(
-      {this.id,
-      this.logradouro,
-      this.numero,
-      this.complemento,
-      this.bairro,
-      this.cidade,
-      this.estado,
-      this.cep});
+  Endereco([
+    this.logradouro,
+    this.numero,
+    this.complemento,
+    this.bairro,
+    this.cidade,
+    this.estado,
+    this.cep,
+  ]);
+
+  String get formattedCep {
+    return "${cep!.substring(0, 2)}.${cep!.substring(2, 5)}-${cep!.substring(5)}";
+  }
 
   Endereco.fromJson(Map<String, dynamic> json) {
     id = json['id'];
